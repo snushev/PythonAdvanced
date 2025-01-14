@@ -1,7 +1,7 @@
-def filler(tup, set_):
-    for i in range(tup):
-        num = int(input())
-        set_.add(num)
+def filler(t_, set_):
+    for i in range(t_):
+        #num = int(input())
+        set_.add(int(input()))
     return set_
 
 t = tuple(map(int, input().split()))

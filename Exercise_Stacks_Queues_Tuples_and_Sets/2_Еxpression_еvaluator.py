@@ -5,30 +5,46 @@ line = input().split()
 
 nums = deque()
 
-for i in line:
-    first_num = 0
+operators = {
+    '+': lambda a, b: a + b,
+    '-': lambda a, b: a - b,
+    '*': lambda a, b: a * b,
+    '/': lambda a, b: a // b,
+}
 
-    if i == '+':
-        first_num = nums.popleft()
-        while nums:
-            first_num += nums.popleft()
-        nums.append(int(first_num))
-    elif i == '-':
-        first_num = nums.popleft()
-        while nums:
-            first_num -= nums.popleft()
-        nums.append(int(first_num))
-    elif i == '*':
-        first_num = nums.popleft()
-        while nums:
-            first_num *= nums.popleft()
-        nums.append(int(first_num))
-    elif i == '/':
-        first_num = nums.popleft()
-        while nums:
-            first_num /= nums.popleft()
-        nums.append(math.floor(first_num))
+for char in line:
+    if char not in '+-*/':
+        nums.append(int(char))
     else:
-        nums.append(int(i))
+        while len(nums) > 1:
+            first_num = nums.popleft()
+            second_num = nums.popleft()
+            nums.appendleft(operators[char](first_num, second_num))
+
+# for i in line:
+#     first_num = 0
+#
+#     if i == '+':
+#         first_num = nums.popleft()
+#         while nums:
+#             first_num += nums.popleft()
+#         nums.append(int(first_num))
+#     elif i == '-':
+#         first_num = nums.popleft()
+#         while nums:
+#             first_num -= nums.popleft()
+#         nums.append(int(first_num))
+#     elif i == '*':
+#         first_num = nums.popleft()
+#         while nums:
+#             first_num *= nums.popleft()
+#         nums.append(int(first_num))
+#     elif i == '/':
+#         first_num = nums.popleft()
+#         while nums:
+#             first_num /= nums.popleft()
+#         nums.append(math.floor(first_num))
+#     else:
+#         nums.append(int(i))
 
 print(*nums)
