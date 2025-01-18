@@ -31,8 +31,6 @@ while initial_colors:
         first_part = first_part[:-1]
         second_part = second_part[:-1]
         midpoint = len(initial_colors) // 2
-        if len(initial_colors) % 2 != 0:
-            midpoint += 1
         if second_part:
             initial_colors.insert(midpoint, second_part)
         if first_part:
