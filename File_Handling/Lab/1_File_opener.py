@@ -1,5 +1,5 @@
-file = open("file.txt")
-if not file:
-    print("File not found.")
-else:
+try:
+    open("file.txt")
     print("File found.")
+except FileNotFoundError:
+    print("File not found.")
