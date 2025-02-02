@@ -1,0 +1,3 @@
+sedimalko,1
+asdict(rsgfd),1
+asd,1
