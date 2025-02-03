@@ -1,7 +1,16 @@
-be = 6
-b = 32
 
-while be > 0 and b > 0:
-            be -= 1  # Всеки пчелояд убива 7 пчели
-            b -= 7  # Всяка пчела убива 1 пчелояд
-            print(f" -> {max(be, 0)} vs {max(b, 0)}")
+
+# for row in matrix:
+#     if row == player:
+#         row_count += 1
+#         if row_count == 4:
+#             return True
+#     else:
+#         row_count = 0
+# for row in range(5, -1, -1):
+#     if matrix[row][PLAYER_MOVE] == player:
+#         col_count += 1
+#         if col_count == 4:
+#             return True
+#     else:
+#         col_count = 0
