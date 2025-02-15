@@ -15,8 +15,6 @@ def accommodate_new_pets(capacity, max_weight, *args):
             full = True
             break
 
-
-
     if not full:
         result.append(f"All pets are accommodated! Available capacity: {capacity}.")
 
